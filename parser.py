@@ -1,6 +1,13 @@
-from binop import BinOp
-from unaryop import UnaryOp
-from item import Item
+from entities.binaryop import BinaryOp
+from entities.item import Item
+
+
+def represents_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
 
 
 class Parser:
@@ -13,19 +20,13 @@ class Parser:
         while self.parsed_list:
             item = self.parsed_list.pop(0)
             if item == ':=':
-                bin_op = BinOp(ast, ':=', UnaryOp(
-                    'INT', self.parsed_list.pop(0)))
-            else if (self.represents_int(item)):
+                bin_op = BinaryOp(ast, ':=', Item('INT', self.parsed_list.pop(0)))
+                ast = bin_op
+            elif represents_int(item):
                 ast = Item('Int', item)
             else:
                 ast = Item('Var', item)
-
-    def represents_int(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
+        self.ast = ast
 
     # def string_to_AST(self):
     #     ast = None

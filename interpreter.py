@@ -1,5 +1,5 @@
-from binaryop import BinaryOp
-from item import Item
+from entities.binaryop import BinaryOp
+from entities.item import Item
 
 
 class Interpreter:
@@ -10,17 +10,19 @@ class Interpreter:
     def eval(self, ast):
         if isinstance(ast, BinaryOp):
             if ast.op == ':=':
-                return dict[self.eval(ast.left)] = self.eval(ast.right)
+                self.d[self.eval(ast.left)] = self.eval(ast.right)
 
-        if isinstance(ast, Num):
-            return int(ast.value)
+        if isinstance(ast, Item):
+            if ast.token == 'INT':
+                return int(ast.value)
+            else:
+                return ast.value
 
     def dictionary_to_result(self):
-        string_format = '{0 → 1}'
-        string_brackets = '{{0}}'
+        string_format = '{0} → {1}'
         return_list = []
-        for (key, values) in self.d.items():
-            for value in values:
-                return_list.append(string_format.format(key, value))
+        for key, value in self.d.items():
+            return_list.append(string_format.format(key, value))
         return_string = " ,".join(return_list)
-        print(string_brackets.format(return_string))
+        final_result = '{' + return_string + '}'
+        print(final_result)

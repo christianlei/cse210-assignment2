@@ -5,9 +5,12 @@ from interpreter import Interpreter
 def main():
     val = input()
     parser = Parser(val)
-    interpreter = Interpreter()
+    parser.string_to_AST()
 
+    interpreter = Interpreter()
+    interpreter.eval(parser.ast)
     interpreter.dictionary_to_result()
+    return
 
 
 if __name__ == '__main__':

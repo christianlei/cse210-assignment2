@@ -1,7 +1,7 @@
 from ast import AST
 
 
-class BinOp(AST):
+class BinaryOp(AST):
     def __init__(self, left, op, right):
         self.left = left
         self.token = self.op = op
