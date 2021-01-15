@@ -35,7 +35,7 @@ class Interpreter:
                 return item.value
             elif item.token == 'FALSE':
                 return item.value
-            else:
+            else:an
                 return item.value
 
     def dictionary_to_result(self):

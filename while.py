@@ -2,6 +2,7 @@ import sys
 from antlr4 import *
 from dist.WhileLexer import WhileLexer
 from dist.WhileParser import WhileParser
+from dist.WhileVisitor import WhileVisitor
 from interpreter import Interpreter
 
 
@@ -10,10 +11,9 @@ def main():
     lexer = WhileLexer(val)
     stream = CommonTokenStream(lexer)
     parser = WhileParser(stream)
-    ast = parser.expr()
-
+    tree = parser.compileUnit()
+    ast = MathVisitor()
     interpreter = Interpreter()
-    interpreter.eval(ast)
     interpreter.dictionary_to_result()
     return
 
