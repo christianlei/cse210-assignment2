@@ -8,15 +8,6 @@ else:
 # This class defines a complete listener for a parse tree produced by WhileParser.
 class WhileListener(ParseTreeListener):
 
-    # Enter a parse tree produced by WhileParser#UMINUS.
-    def enterUMINUS(self, ctx:WhileParser.UMINUSContext):
-        pass
-
-    # Exit a parse tree produced by WhileParser#UMINUS.
-    def exitUMINUS(self, ctx:WhileParser.UMINUSContext):
-        pass
-
-
     # Enter a parse tree produced by WhileParser#MULGRP.
     def enterMULGRP(self, ctx:WhileParser.MULGRPContext):
         pass

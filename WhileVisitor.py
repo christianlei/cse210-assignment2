@@ -9,11 +9,6 @@ else:
 
 class WhileVisitor(ParseTreeVisitor):
 
-    # Visit a parse tree produced by WhileParser#UMINUS.
-    def visitUMINUS(self, ctx:WhileParser.UMINUSContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by WhileParser#MULGRP.
     def visitMULGRP(self, ctx:WhileParser.MULGRPContext):
         return self.visitChildren(ctx)

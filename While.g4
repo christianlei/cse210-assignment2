@@ -2,12 +2,10 @@
 
 grammar While;
 
-//Token
-
-expr : '-' expr #UMINUS
+expr
+    : '(' expr ')' #PARENGRP
     | expr mulop expr #MULGRP
     | expr addop expr #ADDGRP
-    | '(' expr ')' #PARENGRP
     | NUMBER #INT
     ;
 

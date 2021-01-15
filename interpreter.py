@@ -7,36 +7,36 @@ class Interpreter:
     def __init__(self):
         self.d = {}
 
-    def eval(self, ast):
-        if isinstance(ast, BinaryOp):
-            if ast.op == ':=':
-                self.d[self.eval(ast.left)] = self.eval(ast.right)
-            if ast.op == '+':
-                return self.eval(ast.left) + self.eval(ast.right)
-            if ast.op == '*':
-                return self.eval(ast.left) * self.eval(ast.right)
-            if ast.op == '-':
-                return self.eval(ast.left) - self.eval(ast.right)
-            if ast.op == '=':
-                return self.eval(ast.left) == self.eval(ast.right)
-            if ast.op == '<':
-                return self.eval(ast.left) < self.eval(ast.right)
-            if ast.op == '^':
-                return self.eval(ast.left) and self.eval(ast.right)
-            if ast.op == 'v':
-                return self.eval(ast.left) or self.eval(ast.right)
-            if ast.op == '¬':
-                return not self.eval(ast.right)
+    def eval(self, item):
+        if isinstance(item, BinaryOp):
+            if item.op == ':=':
+                self.d[self.eval(item.left)] = self.eval(item.right)
+            if item.op == '+':
+                return self.eval(item.left) + self.eval(item.right)
+            if item.op == '*':
+                return self.eval(item.left) * self.eval(item.right)
+            if item.op == '-':
+                return self.eval(item.left) - self.eval(item.right)
+            if item.op == '=':
+                return self.eval(item.left) == self.eval(item.right)
+            if item.op == '<':
+                return self.eval(item.left) < self.eval(item.right)
+            if item.op == '^':
+                return self.eval(item.left) and self.eval(item.right)
+            if item.op == 'v':
+                return self.eval(item.left) or self.eval(item.right)
+            if item.op == '¬':
+                return not self.eval(item.right)
 
-        if isinstance(ast, Item):
-            if ast.token == 'INT':
-                return int(ast.value)
-            elif ast.token == 'TRUE':
-                return ast.value
-            elif ast.token == 'FALSE':
-                return ast.value
+        if isinstance(item, Item):
+            if item.token == 'INT':
+                return int(item.value)
+            elif item.token == 'TRUE':
+                return item.value
+            elif item.token == 'FALSE':
+                return item.value
             else:
-                return ast.value
+                return item.value
 
     def dictionary_to_result(self):
         string_format = '{0} → {1}'
