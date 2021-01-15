@@ -17,12 +17,12 @@ class WhileListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by WhileParser#MULGRP.
-    def enterMULGRP(self, ctx:WhileParser.MULGRPContext):
+    # Enter a parse tree produced by WhileParser#INFIX.
+    def enterINFIX(self, ctx:WhileParser.INFIXContext):
         pass
 
-    # Exit a parse tree produced by WhileParser#MULGRP.
-    def exitMULGRP(self, ctx:WhileParser.MULGRPContext):
+    # Exit a parse tree produced by WhileParser#INFIX.
+    def exitINFIX(self, ctx:WhileParser.INFIXContext):
         pass
 
 
@@ -35,12 +35,12 @@ class WhileListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by WhileParser#ADDGRP.
-    def enterADDGRP(self, ctx:WhileParser.ADDGRPContext):
+    # Enter a parse tree produced by WhileParser#UNARY.
+    def enterUNARY(self, ctx:WhileParser.UNARYContext):
         pass
 
-    # Exit a parse tree produced by WhileParser#ADDGRP.
-    def exitADDGRP(self, ctx:WhileParser.ADDGRPContext):
+    # Exit a parse tree produced by WhileParser#UNARY.
+    def exitUNARY(self, ctx:WhileParser.UNARYContext):
         pass
 
 
@@ -50,24 +50,6 @@ class WhileListener(ParseTreeListener):
 
     # Exit a parse tree produced by WhileParser#INT.
     def exitINT(self, ctx:WhileParser.INTContext):
-        pass
-
-
-    # Enter a parse tree produced by WhileParser#addop.
-    def enterAddop(self, ctx:WhileParser.AddopContext):
-        pass
-
-    # Exit a parse tree produced by WhileParser#addop.
-    def exitAddop(self, ctx:WhileParser.AddopContext):
-        pass
-
-
-    # Enter a parse tree produced by WhileParser#mulop.
-    def enterMulop(self, ctx:WhileParser.MulopContext):
-        pass
-
-    # Exit a parse tree produced by WhileParser#mulop.
-    def exitMulop(self, ctx:WhileParser.MulopContext):
         pass
 
 

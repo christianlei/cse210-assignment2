@@ -37,9 +37,9 @@ class WhileLexer(Lexer):
 
     T__0 = 1
     T__1 = 2
-    T__2 = 3
-    T__3 = 4
-    T__4 = 5
+    OP_ADD = 3
+    OP_SUB = 4
+    OP_MUL = 5
     NUMBER = 6
     WS = 7
 
@@ -51,9 +51,10 @@ class WhileLexer(Lexer):
             "'('", "')'", "'+'", "'-'", "'*'" ]
 
     symbolicNames = [ "<INVALID>",
-            "NUMBER", "WS" ]
+            "OP_ADD", "OP_SUB", "OP_MUL", "NUMBER", "WS" ]
 
-    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "NUMBER", "WS" ]
+    ruleNames = [ "T__0", "T__1", "OP_ADD", "OP_SUB", "OP_MUL", "NUMBER", 
+                  "WS" ]
 
     grammarFileName = "While.g4"
 

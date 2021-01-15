@@ -12,18 +12,18 @@ token symbolic names:
 null
 null
 null
-null
-null
-null
+OP_ADD
+OP_SUB
+OP_MUL
 NUMBER
 WS
 
 rule names:
 T__0
 T__1
-T__2
-T__3
-T__4
+OP_ADD
+OP_SUB
+OP_MUL
 NUMBER
 WS
 

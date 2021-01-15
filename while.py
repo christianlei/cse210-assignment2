@@ -7,15 +7,16 @@ from interpreter import Interpreter
 
 
 def main():
-    val = InputStream(input('>'))
+    val = InputStream(input())
     lexer = WhileLexer(val)
     stream = CommonTokenStream(lexer)
     parser = WhileParser(stream)
     tree = parser.compileUnit()
-    ast = MathVisitor()
+    ast = WhileVisitor().visitCompileUnit(tree)
     interpreter = Interpreter()
-    interpreter.dictionary_to_result()
-    return
+    print(interpreter.eval(ast))
+    # interpreter.dictionary_to_result()
+    # return
 
 
 if __name__ == '__main__':

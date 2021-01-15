@@ -1,73 +1,81 @@
 load harness
 
 @test "easy-1" {
-  check 'x := 1' '{x → 1}'
+  check '2 + 3' '5'
 }
 
 @test "easy-2" {
-  check 'skip' '{}'
+  check '3 + 92' '95'
 }
 
 @test "easy-3" {
-  check 'if true then x := 1 else x := 0' '{x → 1}'
+  check '100 + 0' '100'
 }
 
 @test "easy-4" {
-  check 'while false do x := 3' '{}'
+  check '-1 + -3' '-4'
 }
 
 @test "easy-5" {
-  check 'while x = 0 do x := 3' '{x → 3}'
+  check '10 + -3' '7'
 }
 
 @test "easy-6" {
-  check 'x := 1 * 9 ; if 5 < x then x := 2 - 2 else y := 9' '{x → 0}'
+  check '-1 + 0' '-1'
 }
 
 @test "easy-7" {
-  check 'if x = 0 ∧ y < 4 then x := 1 else x := 3' '{x → 1}'
+  check '99 + 3 + 12 + 2' '116'
 }
 
 @test "easy-8" {
-  check 'if x = 0 ∧ 4 < 4 then x := 1 else x := 3' '{x → 3}'
+  check '2 + 3 + 4 + -1' '8'
 }
 
 @test "easy-9" {
-  check 'if 0 < x ∧ 4 = 4 then x := 1 else x := 3' '{x → 3}'
+  check '-1 + -2 + 3' '0'
 }
 
 @test "easy-10" {
-  check 'if 0 < x ∧ 4 < y then x := 1 else x := 3' '{x → 3}'
+  check '-1 + -5 + -1' '-7'
 }
 
 @test "easy-11" {
-  check 'if x = 0 ∨ y < 4 then x := 1 else x := 3' '{x → 1}'
+  check '9 * 3' '27'
 }
 
 @test "easy-12" {
-  check 'if x = 0 ∨ 4 < 4 then x := 1 else x := 3' '{x → 1}'
+  check '-3 * 4' '-12'
 }
 
 @test "easy-13" {
-  check 'if 0 < x ∨ 4 = 4 then x := 1 else x := 3' '{x → 1}'
+  check '0 * 2' '0'
 }
 
 @test "easy-14" {
-  check 'if 0 < x ∨ 4 < y then x := 1 else x := 3' '{x → 3}'
+  check '20 * 5' '100'
 }
 
 @test "easy-15" {
-  check 'while ¬ true do x := 1' '{}'
+  check '0 * 2' '0'
 }
 
 @test "easy-16" {
-  check 'while ¬ ( x < 0 ) do x := -1' '{x → -1}'
+  check '-2 * -0' '0'
 }
 
 @test "easy-17" {
-  check 'TRUE := 1' '{TRUE → 1}'
+  check '2 * 3 * 4 * 1000' '24000'
 }
 
 @test "easy-18" {
-  check 'FALSE := 1' '{FALSE → 1}'
+  check '1 * -2 * 3 * -4' '24'
+}
+
+@test "easy-19" {
+  check '9 * 2 * 99 * 999' '1780218'
+}
+
+@test "easy-20" {
+  check '1 * 1 * -1 * 1' '-1'
 }

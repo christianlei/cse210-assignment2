@@ -8,13 +8,15 @@ compileUnit
 
 expr
     : '(' expr ')' #PARENGRP
-    | expr mulop expr #MULGRP
-    | expr addop expr #ADDGRP
-    | NUMBER #INT
+    | op=('+'|'-') expr   #UNARY
+    | left=expr op='*' right=expr #INFIX
+    | left=expr op=('+'|'-') right=expr #INFIX
+    | value=NUMBER #INT
     ;
 
-addop: '+' | '-';
-mulop: '*';
+OP_ADD: '+';
+OP_SUB: '-';
+OP_MUL: '*';
 
 //asgn: ':=';
 //SKP: 'skip';
