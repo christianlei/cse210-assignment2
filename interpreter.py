@@ -11,10 +11,30 @@ class Interpreter:
         if isinstance(ast, BinaryOp):
             if ast.op == ':=':
                 self.d[self.eval(ast.left)] = self.eval(ast.right)
+            if ast.op == '+':
+                return self.eval(ast.left) + self.eval(ast.right)
+            if ast.op == '*':
+                return self.eval(ast.left) * self.eval(ast.right)
+            if ast.op == '-':
+                return self.eval(ast.left) - self.eval(ast.right)
+            if ast.op == '=':
+                return self.eval(ast.left) == self.eval(ast.right)
+            if ast.op == '<':
+                return self.eval(ast.left) < self.eval(ast.right)
+            if ast.op == '^':
+                return self.eval(ast.left) and self.eval(ast.right)
+            if ast.op == 'v':
+                return self.eval(ast.left) or self.eval(ast.right)
+            if ast.op == '¬':
+                return not self.eval(ast.right)
 
         if isinstance(ast, Item):
             if ast.token == 'INT':
                 return int(ast.value)
+            elif ast.token == 'TRUE':
+                return ast.value
+            elif ast.token == 'FALSE':
+                return ast.value
             else:
                 return ast.value
 
