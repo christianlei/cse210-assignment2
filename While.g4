@@ -2,6 +2,10 @@
 
 grammar While;
 
+compileUnit
+    :   expr EOF
+    ;
+
 expr
     : '(' expr ')' #PARENGRP
     | expr mulop expr #MULGRP
