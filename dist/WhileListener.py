@@ -17,6 +17,15 @@ class WhileListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by WhileParser#semi_stat.
+    def enterSemi_stat(self, ctx:WhileParser.Semi_statContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#semi_stat.
+    def exitSemi_stat(self, ctx:WhileParser.Semi_statContext):
+        pass
+
+
     # Enter a parse tree produced by WhileParser#stat.
     def enterStat(self, ctx:WhileParser.StatContext):
         pass

@@ -1,5 +1,5 @@
 from antlr4 import *
-from entities.operator import BinaryOp, Expression
+from entities.operator import BinaryOp, Expression, MultiExpression
 from entities.item import Int, NegInt, Var, Bool
 
 if __name__ is not None and "." in __name__:
@@ -14,7 +14,7 @@ class WhileVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by WhileParser#compileUnit.
     def visitCompileUnit(self, ctx: WhileParser.CompileUnitContext):
-        return self.visit(ctx.stat())
+        return self.visit(ctx.semi_stat())
 
     # Visit a parse tree produced by WhileParser#INFIX.
     def visitINFIX(self, ctx: WhileParser.INFIXContext):
@@ -29,6 +29,8 @@ class WhileVisitor(ParseTreeVisitor):
             node.op = ':='
         elif ctx.OP_EQ():
             node.op = '='
+        elif ctx.OP_LESS():
+            node.op = '<'
         node.left = self.visit(ctx.left)
         node.right = self.visit(ctx.right)
         return node
@@ -82,6 +84,19 @@ class WhileVisitor(ParseTreeVisitor):
         node.conditional = self.visit(ctx.conditional)
         node.true = self.visit(ctx.inner)
         return node
+
+    # Visit a parse tree produced by WhileParser#semi_stat.
+    def visitSemi_stat(self, ctx: WhileParser.Semi_statContext):
+        root_node = MultiExpression()
+        list_of_stat = ctx.stat()
+        root_node.first = self.visit(list_of_stat.pop(0))
+        node = root_node
+        while len(list_of_stat) > 0:
+            next_node = MultiExpression()
+            next_node.first = self.visit(list_of_stat.pop(0))
+            node.next = next_node
+            node = next_node
+        return root_node
 
 
 del WhileParser

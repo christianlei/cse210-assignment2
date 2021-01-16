@@ -13,3 +13,9 @@ class Expression(AST):
         self.true = true
         self.conditional = conditional
         self.false = false
+
+
+class MultiExpression(AST):
+    def __init__(self, first=None, next=None):
+        self.first = first
+        self.next = next

@@ -1,4 +1,4 @@
-from entities.operator import BinaryOp, Expression
+from entities.operator import BinaryOp, Expression, MultiExpression
 from entities.item import Int, NegInt, Var, Bool
 
 
@@ -8,7 +8,16 @@ class Interpreter:
         self.d = {}
         self.empty_var = 0
 
+    def check_in_dict(self, var):
+        if var not in self.d:
+            self.d[var] = self.empty_var
+
     def eval(self, item):
+        if isinstance(item, MultiExpression):
+            self.eval(item.first)
+            if item.next is not None:
+                self.eval(item.next)
+
         if isinstance(item, Expression):
             if self.eval(item.conditional):
                 return self.eval(item.true)
@@ -27,13 +36,33 @@ class Interpreter:
                 return self.eval(item.left) * self.eval(item.right)
             if item.op == '-':
                 return self.eval(item.left) - self.eval(item.right)
-            if item.op == '=':
-                var = self.eval(item.left)
-                if var not in self.d:
-                    self.d[var] = self.empty_var
-                return self.d[var] == self.eval(item.right)
-            # if item.op == '<':
-            #     return self.eval(item.left) < self.eval(item.right)
+            left_item = self.eval(item.left)
+            right_item = self.eval(item.right)
+
+            if isinstance(left_item, int) and isinstance(right_item, int):
+                if item.op == '=':
+                    return left_item == right_item
+                if item.op == '<':
+                    return left_item < right_item
+            if isinstance(left_item, str) and isinstance(right_item, str):
+                self.check_in_dict(left_item)
+                self.check_in_dict(right_item)
+                if item.op == '=':
+                    return self.d[left_item] == self.d[right_item]
+                if item.op == '<':
+                    return self.d[left_item] < self.d[right_item]
+            if isinstance(right_item, str) and isinstance(left_item, int):
+                self.check_in_dict(right_item)
+                if item.op == '=':
+                    return left_item == self.d[right_item]
+                if item.op == '<':
+                    return left_item < self.d[right_item]
+            if isinstance(right_item, int) and isinstance(left_item, str):
+                self.check_in_dict(left_item)
+                if item.op == '=':
+                    return right_item == self.d[left_item]
+                if item.op == '<':
+                    return right_item < self.d[left_item]
             # if item.op == '^':
             #     return self.eval(item.left) and self.eval(item.right)
             # if item.op == 'v':
@@ -47,6 +76,7 @@ class Interpreter:
             return item.value
         elif isinstance(item, Bool):
             return item.value
+        return
 
     def dictionary_to_result(self):
         string_format = '{0} → {1}'

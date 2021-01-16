@@ -3,7 +3,11 @@
 grammar While;
 
 compileUnit
-    :   stat EOF
+    :   semi_stat EOF
+    ;
+
+semi_stat
+    : stat (SEMI stat)*
     ;
 
 stat
@@ -15,10 +19,10 @@ stat
 expr
     : '(' expr ')' #PARENGRP
     | op=('+'|'-') expr   #UNARY
-    | left=expr op=':=' right=expr #INFIX
     | left=expr op='*' right=expr #INFIX
     | left=expr op=('+'|'-') right=expr #INFIX
-    | left=expr op='=' right=expr #INFIX
+    | left=expr op=('=' | '<') right=expr #INFIX
+    | left=expr op=':=' right=expr #INFIX
     | value=NUMBER #INT
     | value=VAR #VAL
     | value=(TRUE|FALSE) #BOOL
@@ -33,13 +37,11 @@ while_stat
     : WHILE conditional=expr DO inner=expr
     ;
 
-semi_state
-    : stat SEMI (stat)+
-    ;
-
 //////////////////////////////////
 // LEXER
 //////////////////////////////////
+SEMI: ';';
+
 OP_ADD: '+';
 OP_SUB: '-';
 OP_MUL: '*';
@@ -58,7 +60,6 @@ THEN: 'then';
 ELSE: 'else';
 WHILE: 'while';
 DO: 'do';
-SEMI: ';';
 
 PASS: 'skip';
 VAR : ('a'..'z');
