@@ -1,7 +1,11 @@
 from ast import AST
 
 
-class Item(AST):
-    def __init__(self, token, value):
-        self.token = token
+class Int(AST):
+    def __init__(self, value):
         self.value = value
+
+
+class NegInt(AST):
+    def __init__(self, node):
+        self.value = -1 * node.value

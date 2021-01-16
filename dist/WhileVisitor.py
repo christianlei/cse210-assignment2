@@ -1,6 +1,6 @@
 from antlr4 import *
 from entities.binaryop import BinaryOp
-from entities.item import Item
+from entities.item import Int, NegInt
 
 if __name__ is not None and "." in __name__:
     from .WhileParser import WhileParser
@@ -35,14 +35,15 @@ class WhileVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by WhileParser#INT.
     def visitINT(self, ctx: WhileParser.INTContext):
-        return Item(token='INT', value=str(ctx.NUMBER()))
+        return Int(value=int(str(ctx.NUMBER())))
 
     # Visit a parse tree produced by WhileParser#UNARY.
-    def visitUNARY(self, ctx:WhileParser.UNARYContext):
+    def visitUNARY(self, ctx: WhileParser.UNARYContext):
         if ctx.OP_ADD():
             return self.visit(ctx.expr())
         elif ctx.OP_SUB():
-            return Item(token='INT', value=str(ctx.expr()))
+            return NegInt(node=self.visit(ctx.expr()))
         return self.visitChildren(ctx)
+
 
 del WhileParser

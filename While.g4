@@ -9,6 +9,7 @@ compileUnit
 expr
     : '(' expr ')' #PARENGRP
     | op=('+'|'-') expr   #UNARY
+    |
     | left=expr op='*' right=expr #INFIX
     | left=expr op=('+'|'-') right=expr #INFIX
     | value=NUMBER #INT
@@ -17,8 +18,7 @@ expr
 OP_ADD: '+';
 OP_SUB: '-';
 OP_MUL: '*';
-
-//asgn: ':=';
+OP_ASGN: ':=';
 //SKP: 'skip';
 //TRUE: 'true';
 //FALSE: 'false';
@@ -28,5 +28,6 @@ OP_MUL: '*';
 //LESS: '<';
 //SEMI: ';';
 
-NUMBER : ('0' .. '9') + ('.' ('0' .. '9') +)? ;
+VAR : [a-z];
+NUMBER : [0-9]+ ('.' [0-9]+)? ([eE] [+-]? [0-9]+)?;
 WS : [ \r\n\t] + -> skip ;
