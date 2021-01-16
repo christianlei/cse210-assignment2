@@ -11,33 +11,33 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\31")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\32")
         buf.write("N\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2")
         buf.write("\3\2\3\2\3\3\3\3\3\3\7\3\25\n\3\f\3\16\3\30\13\3\3\4\3")
         buf.write("\4\3\4\5\4\35\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
         buf.write("\3\5\3\5\3\5\3\5\5\5,\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
         buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5=\n\5\f\5\16\5@\13")
         buf.write("\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7")
-        buf.write("\2\3\b\b\2\4\6\b\n\f\2\6\3\2\6\7\3\2\17\20\4\2\n\n\16")
-        buf.write("\16\3\2\f\r\2U\2\16\3\2\2\2\4\21\3\2\2\2\6\34\3\2\2\2")
-        buf.write("\b+\3\2\2\2\nA\3\2\2\2\fH\3\2\2\2\16\17\5\4\3\2\17\20")
-        buf.write("\7\2\2\3\20\3\3\2\2\2\21\26\5\6\4\2\22\23\7\5\2\2\23\25")
-        buf.write("\5\6\4\2\24\22\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26")
-        buf.write("\27\3\2\2\2\27\5\3\2\2\2\30\26\3\2\2\2\31\35\5\b\5\2\32")
-        buf.write("\35\5\n\6\2\33\35\5\f\7\2\34\31\3\2\2\2\34\32\3\2\2\2")
-        buf.write("\34\33\3\2\2\2\35\7\3\2\2\2\36\37\b\5\1\2\37 \7\3\2\2")
-        buf.write(" !\5\b\5\2!\"\7\4\2\2\",\3\2\2\2#$\t\2\2\2$,\5\b\5\r%")
-        buf.write("&\7\13\2\2&,\5\b\5\b\',\7\30\2\2(,\7\27\2\2),\t\3\2\2")
-        buf.write("*,\7\26\2\2+\36\3\2\2\2+#\3\2\2\2+%\3\2\2\2+\'\3\2\2\2")
-        buf.write("+(\3\2\2\2+)\3\2\2\2+*\3\2\2\2,>\3\2\2\2-.\f\f\2\2./\7")
-        buf.write("\b\2\2/=\5\b\5\r\60\61\f\13\2\2\61\62\t\2\2\2\62=\5\b")
-        buf.write("\5\f\63\64\f\n\2\2\64\65\t\4\2\2\65=\5\b\5\13\66\67\f")
-        buf.write("\t\2\2\678\t\5\2\28=\5\b\5\n9:\f\7\2\2:;\7\t\2\2;=\5\b")
-        buf.write("\5\b<-\3\2\2\2<\60\3\2\2\2<\63\3\2\2\2<\66\3\2\2\2<9\3")
-        buf.write("\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\t\3\2\2\2@>\3\2")
-        buf.write("\2\2AB\7\21\2\2BC\5\b\5\2CD\7\22\2\2DE\5\b\5\2EF\7\23")
-        buf.write("\2\2FG\5\b\5\2G\13\3\2\2\2HI\7\24\2\2IJ\5\b\5\2JK\7\25")
-        buf.write("\2\2KL\5\b\5\2L\r\3\2\2\2\7\26\34+<>")
+        buf.write("\2\3\b\b\2\4\6\b\n\f\2\7\3\2\6\7\3\2\27\30\3\2\17\20\4")
+        buf.write("\2\n\n\16\16\3\2\f\r\2U\2\16\3\2\2\2\4\21\3\2\2\2\6\34")
+        buf.write("\3\2\2\2\b+\3\2\2\2\nA\3\2\2\2\fH\3\2\2\2\16\17\5\4\3")
+        buf.write("\2\17\20\7\2\2\3\20\3\3\2\2\2\21\26\5\6\4\2\22\23\7\5")
+        buf.write("\2\2\23\25\5\6\4\2\24\22\3\2\2\2\25\30\3\2\2\2\26\24\3")
+        buf.write("\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\26\3\2\2\2\31\35")
+        buf.write("\5\b\5\2\32\35\5\n\6\2\33\35\5\f\7\2\34\31\3\2\2\2\34")
+        buf.write("\32\3\2\2\2\34\33\3\2\2\2\35\7\3\2\2\2\36\37\b\5\1\2\37")
+        buf.write(" \7\3\2\2 !\5\b\5\2!\"\7\4\2\2\",\3\2\2\2#$\t\2\2\2$,")
+        buf.write("\5\b\5\r%&\7\13\2\2&,\5\b\5\b\',\7\31\2\2(,\t\3\2\2),")
+        buf.write("\t\4\2\2*,\7\26\2\2+\36\3\2\2\2+#\3\2\2\2+%\3\2\2\2+\'")
+        buf.write("\3\2\2\2+(\3\2\2\2+)\3\2\2\2+*\3\2\2\2,>\3\2\2\2-.\f\f")
+        buf.write("\2\2./\7\b\2\2/=\5\b\5\r\60\61\f\13\2\2\61\62\t\2\2\2")
+        buf.write("\62=\5\b\5\f\63\64\f\n\2\2\64\65\t\5\2\2\65=\5\b\5\13")
+        buf.write("\66\67\f\t\2\2\678\t\6\2\28=\5\b\5\n9:\f\7\2\2:;\7\t\2")
+        buf.write("\2;=\5\b\5\b<-\3\2\2\2<\60\3\2\2\2<\63\3\2\2\2<\66\3\2")
+        buf.write("\2\2<9\3\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\t\3\2\2")
+        buf.write("\2@>\3\2\2\2AB\7\21\2\2BC\5\b\5\2CD\7\22\2\2DE\5\b\5\2")
+        buf.write("EF\7\23\2\2FG\5\b\5\2G\13\3\2\2\2HI\7\24\2\2IJ\5\b\5\2")
+        buf.write("JK\7\25\2\2KL\5\b\5\2L\r\3\2\2\2\7\26\34+<>")
         return buf.getvalue()
 
 
@@ -59,8 +59,8 @@ class WhileParser ( Parser ):
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "SEMI", "OP_ADD", 
                       "OP_SUB", "OP_MUL", "OP_ASGN", "OP_EQ", "OP_NOT", 
                       "OP_AND", "OP_OR", "OP_LESS", "TRUE", "FALSE", "IF", 
-                      "THEN", "ELSE", "WHILE", "DO", "PASS", "VAR", "NUMBER", 
-                      "WS" ]
+                      "THEN", "ELSE", "WHILE", "DO", "PASS", "VAR", "WORD_VAR", 
+                      "NUMBER", "WS" ]
 
     RULE_compileUnit = 0
     RULE_semi_stat = 1
@@ -94,8 +94,9 @@ class WhileParser ( Parser ):
     DO=19
     PASS=20
     VAR=21
-    NUMBER=22
-    WS=23
+    WORD_VAR=22
+    NUMBER=23
+    WS=24
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -276,7 +277,7 @@ class WhileParser ( Parser ):
             self.state = 26
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [WhileParser.T__0, WhileParser.OP_ADD, WhileParser.OP_SUB, WhileParser.OP_NOT, WhileParser.TRUE, WhileParser.FALSE, WhileParser.PASS, WhileParser.VAR, WhileParser.NUMBER]:
+            if token in [WhileParser.T__0, WhileParser.OP_ADD, WhileParser.OP_SUB, WhileParser.OP_NOT, WhileParser.TRUE, WhileParser.FALSE, WhileParser.PASS, WhileParser.VAR, WhileParser.WORD_VAR, WhileParser.NUMBER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 23
                 self.expr(0)
@@ -328,6 +329,8 @@ class WhileParser ( Parser ):
 
         def VAR(self):
             return self.getToken(WhileParser.VAR, 0)
+        def WORD_VAR(self):
+            return self.getToken(WhileParser.WORD_VAR, 0)
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVAL" ):
@@ -608,12 +611,18 @@ class WhileParser ( Parser ):
                 self.state = 37
                 localctx.value = self.match(WhileParser.NUMBER)
                 pass
-            elif token in [WhileParser.VAR]:
+            elif token in [WhileParser.VAR, WhileParser.WORD_VAR]:
                 localctx = WhileParser.VALContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 38
-                localctx.value = self.match(WhileParser.VAR)
+                localctx.value = self._input.LT(1)
+                _la = self._input.LA(1)
+                if not(_la==WhileParser.VAR or _la==WhileParser.WORD_VAR):
+                    localctx.value = self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
                 pass
             elif token in [WhileParser.TRUE, WhileParser.FALSE]:
                 localctx = WhileParser.BOOLContext(self, localctx)

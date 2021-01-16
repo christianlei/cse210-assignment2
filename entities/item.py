@@ -19,8 +19,3 @@ class Var(AST):
 class Bool(AST):
     def __init__(self, value):
         self.value = value
-
-
-class NotBool(AST):
-    def __init__(self, node):
-        self.node = node

@@ -8,6 +8,11 @@ class BinaryOp(AST):
         self.right = right
 
 
+class NotOp(AST):
+    def __init__(self, node):
+        self.node = node
+
+
 class Expression(AST):
     def __init__(self, conditional=None, true=None, false=None):
         self.true = true

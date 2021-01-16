@@ -1,6 +1,6 @@
 from antlr4 import *
-from entities.operator import BinaryOp, Expression, MultiExpression
-from entities.item import Int, NegInt, Var, Bool, NotBool
+from entities.operator import BinaryOp, Expression, MultiExpression, NotOp
+from entities.item import Int, NegInt, Var, Bool
 
 if __name__ is not None and "." in __name__:
     from .WhileParser import WhileParser
@@ -49,7 +49,10 @@ class WhileVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by WhileParser#VAL.
     def visitVAL(self, ctx: WhileParser.VALContext):
-        return Var(value=(str(ctx.VAR())))
+        if ctx.VAR():
+            return Var(value=(str(ctx.VAR())))
+        elif ctx.WORD_VAR():
+            return Var(value=(str(ctx.WORD_VAR())))
 
     # Visit a parse tree produced by WhileParser#BOOL.
     def visitBOOL(self, ctx: WhileParser.BOOLContext):
@@ -104,7 +107,7 @@ class WhileVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by WhileParser#UNARYBOOL.
     def visitUNARYBOOL(self, ctx: WhileParser.UNARYBOOLContext):
         if ctx.OP_NOT():
-            return NotBool(node=self.visit(ctx.expr()))
+            return NotOp(node=self.visit(ctx.expr()))
 
 
 del WhileParser

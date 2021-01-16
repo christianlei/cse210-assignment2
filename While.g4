@@ -26,7 +26,7 @@ expr
     | op='¬' expr   #UNARYBOOL
     | left=expr op=':=' right=expr #INFIX
     | value=NUMBER #INT
-    | value=VAR #VAL
+    | value=(VAR|WORD_VAR) #VAL
     | value=(TRUE|FALSE) #BOOL
     | value=PASS #PASS
     ;
@@ -65,5 +65,6 @@ DO: 'do';
 
 PASS: 'skip';
 VAR : ('a'..'z');
+WORD_VAR: ('A'..'Z')+;
 NUMBER : [0-9]+ ('.' [0-9]+)? ([eE] [+-]? [0-9]+)?;
 WS : [ \r\n\t] + -> skip ;
