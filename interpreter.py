@@ -1,13 +1,23 @@
-from entities.binaryop import BinaryOp
-from entities.item import Int, NegInt, Var
+from entities.operator import BinaryOp, Expression
+from entities.item import Int, NegInt, Var, Bool
 
 
 class Interpreter:
 
     def __init__(self):
         self.d = {}
+        self.empty_var = 0
 
     def eval(self, item):
+        if isinstance(item, Expression):
+            if self.eval(item.conditional):
+                return self.eval(item.true)
+            else:
+                if item.false is not None:
+                    return self.eval(item.false)
+                else:
+                    return
+
         if isinstance(item, BinaryOp):
             if item.op == ':=':
                 self.d[self.eval(item.left)] = self.eval(item.right)
@@ -17,8 +27,11 @@ class Interpreter:
                 return self.eval(item.left) * self.eval(item.right)
             if item.op == '-':
                 return self.eval(item.left) - self.eval(item.right)
-            # if item.op == '=':
-            #     return self.eval(item.left) == self.eval(item.right)
+            if item.op == '=':
+                var = self.eval(item.left)
+                if var not in self.d:
+                    self.d[var] = self.empty_var
+                return self.d[var] == self.eval(item.right)
             # if item.op == '<':
             #     return self.eval(item.left) < self.eval(item.right)
             # if item.op == '^':
@@ -28,12 +41,12 @@ class Interpreter:
             # if item.op == '¬':
             #     return not self.eval(item.right)
 
-        if isinstance(item, Int) or isinstance(item, NegInt) or isinstance(item, Var):
+        if isinstance(item, Int) or isinstance(item, NegInt):
             return item.value
-            # elif item.token == 'TRUE':
-            #     return item.value
-            # elif item.token == 'FALSE':
-            #     return item.value
+        elif isinstance(item, Var):
+            return item.value
+        elif isinstance(item, Bool):
+            return item.value
 
     def dictionary_to_result(self):
         string_format = '{0} → {1}'
