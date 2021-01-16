@@ -46,9 +46,9 @@ class WhileVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by WhileParser#BOOL.
     def visitBOOL(self, ctx: WhileParser.BOOLContext):
         if ctx.TRUE():
-            return Bool(value=(bool(ctx.TRUE())))
+            return Bool(value=(bool(True)))
         elif ctx.FALSE():
-            return Bool(value=(bool(ctx.FALSE())))
+            return Bool(value=(bool(False)))
 
     # Visit a parse tree produced by WhileParser#UNARY.
     def visitUNARY(self, ctx: WhileParser.UNARYContext):
@@ -68,9 +68,16 @@ class WhileVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by WhileParser#if_stat.
     def visitIf_stat(self, ctx: WhileParser.If_statContext):
-        if self.visit(ctx.conditional):
+        if self.visit(ctx.conditional).value:
             return self.visit(ctx.true)
         else:
             return self.visit(ctx.false)
+
+    # Visit a parse tree produced by WhileParser#while_stat.
+    def visitWhile_stat(self, ctx: WhileParser.While_statContext):
+        if self.visit(ctx.conditional).value:
+            return self.visit(ctx.inner)
+        return
+
 
 del WhileParser

@@ -9,6 +9,7 @@ compileUnit
 stat
     : expr
     | if_stat
+    | while_stat
     ;
 
 expr
@@ -27,6 +28,9 @@ if_stat
     : IF conditional=expr THEN true=expr ELSE false=expr
     ;
 
+while_stat
+    : WHILE conditional=expr DO inner=expr
+    ;
 
 OP_ADD: '+';
 OP_SUB: '-';
@@ -38,13 +42,16 @@ FALSE: 'false';
 IF: 'if';
 THEN: 'then';
 ELSE: 'else';
+WHILE: 'while';
+DO: 'do';
+EQ: '=';
 //NOT: '¬';
 //AND: '^';
 //OR: 'v';
 //LESS: '<';
 //SEMI: ';';
 
-PASS: ('skip');
+PASS: 'skip';
 VAR : ('a'..'z');
 NUMBER : [0-9]+ ('.' [0-9]+)? ([eE] [+-]? [0-9]+)?;
 WS : [ \r\n\t] + -> skip ;

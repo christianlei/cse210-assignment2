@@ -98,5 +98,14 @@ class WhileListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by WhileParser#while_stat.
+    def enterWhile_stat(self, ctx:WhileParser.While_statContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#while_stat.
+    def exitWhile_stat(self, ctx:WhileParser.While_statContext):
+        pass
+
+
 
 del WhileParser
