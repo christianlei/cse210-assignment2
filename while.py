@@ -14,7 +14,7 @@ def main():
     tree = parser.compileUnit()
     ast = WhileVisitor().visitCompileUnit(tree)
     interpreter = Interpreter()
-    # print(interpreter.eval(ast))
+    interpreter.eval(ast)
     interpreter.dictionary_to_result()
     return
 

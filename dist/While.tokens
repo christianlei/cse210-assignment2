@@ -3,10 +3,14 @@ T__1=2
 OP_ADD=3
 OP_SUB=4
 OP_MUL=5
-NUMBER=6
-WS=7
+OP_ASGN=6
+PASS=7
+VAR=8
+NUMBER=9
+WS=10
 '('=1
 ')'=2
 '+'=3
 '-'=4
 '*'=5
+':='=6

@@ -1,5 +1,5 @@
 from entities.binaryop import BinaryOp
-from entities.item import Int, NegInt
+from entities.item import Int, NegInt, Var
 
 
 class Interpreter:
@@ -9,8 +9,8 @@ class Interpreter:
 
     def eval(self, item):
         if isinstance(item, BinaryOp):
-            # if item.op == ':=':
-            #     self.d[self.eval(item.left)] = self.eval(item.right)
+            if item.op == ':=':
+                self.d[self.eval(item.left)] = self.eval(item.right)
             if item.op == '+':
                 return self.eval(item.left) + self.eval(item.right)
             if item.op == '*':
@@ -28,7 +28,7 @@ class Interpreter:
             # if item.op == '¬':
             #     return not self.eval(item.right)
 
-        if isinstance(item, Int) or isinstance(item, NegInt):
+        if isinstance(item, Int) or isinstance(item, NegInt) or isinstance(item, Var):
             return item.value
             # elif item.token == 'TRUE':
             #     return item.value

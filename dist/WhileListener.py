@@ -17,6 +17,24 @@ class WhileListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by WhileParser#VAL.
+    def enterVAL(self, ctx:WhileParser.VALContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#VAL.
+    def exitVAL(self, ctx:WhileParser.VALContext):
+        pass
+
+
+    # Enter a parse tree produced by WhileParser#PASS.
+    def enterPASS(self, ctx:WhileParser.PASSContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#PASS.
+    def exitPASS(self, ctx:WhileParser.PASSContext):
+        pass
+
+
     # Enter a parse tree produced by WhileParser#INFIX.
     def enterINFIX(self, ctx:WhileParser.INFIXContext):
         pass
