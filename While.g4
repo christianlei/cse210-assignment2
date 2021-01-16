@@ -23,6 +23,7 @@ expr
     | left=expr op=('+'|'-') right=expr #INFIX
     | left=expr op=('=' | '<') right=expr #INFIX
     | left=expr op=('∧' | '∨') right=expr #INFIX
+    | op='¬' expr   #UNARYBOOL
     | left=expr op=':=' right=expr #INFIX
     | value=NUMBER #INT
     | value=VAR #VAL

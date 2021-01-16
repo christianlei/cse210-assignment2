@@ -1,5 +1,5 @@
 from entities.operator import BinaryOp, Expression, MultiExpression
-from entities.item import Int, NegInt, Var, Bool
+from entities.item import Int, NegInt, Var, Bool, NotBool
 
 
 class Interpreter:
@@ -69,13 +69,14 @@ class Interpreter:
                     return  self.check_in_dict(left_item) < right_item
             # if item.op == '¬':
             #     return not self.eval(item.right)
-
         if isinstance(item, Int) or isinstance(item, NegInt):
             return item.value
         elif isinstance(item, Var):
             return item.value
         elif isinstance(item, Bool):
             return item.value
+        elif isinstance(item, NotBool):
+            return not self.eval(item.node)
         return
 
     def dictionary_to_result(self):

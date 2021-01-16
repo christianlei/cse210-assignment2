@@ -53,6 +53,15 @@ class WhileListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by WhileParser#UNARYBOOL.
+    def enterUNARYBOOL(self, ctx:WhileParser.UNARYBOOLContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#UNARYBOOL.
+    def exitUNARYBOOL(self, ctx:WhileParser.UNARYBOOLContext):
+        pass
+
+
     # Enter a parse tree produced by WhileParser#BOOL.
     def enterBOOL(self, ctx:WhileParser.BOOLContext):
         pass
