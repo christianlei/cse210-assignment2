@@ -13,6 +13,21 @@ class Interpreter:
             return self.d[var]
         return self.empty_var
 
+    def return_int_value(self, item):
+        if isinstance(item, int):
+            return item
+        if isinstance(item, str):
+            return self.check_in_dict(item)
+
+    def evaluate_if_expression(self, item):
+        if self.eval(item.conditional):
+            return self.eval(item.true)
+        else:
+            if item.false is not None:
+                return self.eval(item.false)
+            else:
+                return None
+
     def eval(self, item):
         if isinstance(item, MultiExpression):
             self.eval(item.first)
@@ -20,13 +35,11 @@ class Interpreter:
                 self.eval(item.next)
 
         if isinstance(item, Expression):
-            if self.eval(item.conditional):
-                return self.eval(item.true)
-            else:
-                if item.false is not None:
-                    return self.eval(item.false)
-                else:
-                    return
+            if item.method == 'if':
+                return self.evaluate_if_expression(item)
+            elif item.method == 'while':
+                while self.eval(item.conditional):
+                    self.eval(item.true)
 
         if isinstance(item, NotOp):
             return not self.eval(item.node)
@@ -38,8 +51,6 @@ class Interpreter:
                 return self.eval(item.left) + self.eval(item.right)
             if item.op == '*':
                 return self.eval(item.left) * self.eval(item.right)
-            if item.op == '-':
-                return self.eval(item.left) - self.eval(item.right)
             if item.op == '∧':
                 return self.eval(item.left) and self.eval(item.right)
             if item.op == '∨':
@@ -47,31 +58,13 @@ class Interpreter:
 
             left_item = self.eval(item.left)
             right_item = self.eval(item.right)
-            if isinstance(left_item, int) and isinstance(right_item, int):
-                if item.op == '=':
-                    return left_item == right_item
-                if item.op == '<':
-                    return left_item < right_item
-            if isinstance(left_item, str) and isinstance(right_item, str):
-                self.check_in_dict(left_item)
-                self.check_in_dict(right_item)
-                if item.op == '=':
-                    return self.check_in_dict(left_item) == self.check_in_dict(right_item)
-                if item.op == '<':
-                    return self.check_in_dict(left_item) < self.check_in_dict(right_item)
-            if isinstance(right_item, str) and isinstance(left_item, int):
-                self.check_in_dict(right_item)
-                if item.op == '=':
-                    return left_item == self.check_in_dict(right_item)
-                if item.op == '<':
-                    return left_item < self.check_in_dict(right_item)
-            if isinstance(right_item, int) and isinstance(left_item, str):
-                if item.op == '=':
-                    return right_item == self.check_in_dict(left_item)
-                if item.op == '<':
-                    return  self.check_in_dict(left_item) < right_item
-            # if item.op == '¬':
-            #     return not self.eval(item.right)
+            if item.op == '=':
+                return self.return_int_value(left_item) == self.return_int_value(right_item)
+            if item.op == '<':
+                return self.return_int_value(left_item) < self.return_int_value(right_item)
+            if item.op == '-':
+                return self.return_int_value(left_item) - self.return_int_value(right_item)
+
         if isinstance(item, Int) or isinstance(item, NegInt):
             return item.value
         elif isinstance(item, Var):
@@ -85,6 +78,6 @@ class Interpreter:
         return_list = []
         for key, value in self.d.items():
             return_list.append(string_format.format(key, value))
-        return_string = " ,".join(return_list)
+        return_string = ", ".join(return_list)
         final_result = '{' + return_string + '}'
         print(final_result)

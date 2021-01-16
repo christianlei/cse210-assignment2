@@ -36,7 +36,8 @@ if_stat
     ;
 
 while_stat
-    : WHILE conditional=expr DO inner=expr
+    : WHILE conditional=expr DO inner=stat
+    | WHILE conditional=expr DO '{' inner=stat '}'
     ;
 
 //////////////////////////////////

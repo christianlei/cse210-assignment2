@@ -14,10 +14,11 @@ class NotOp(AST):
 
 
 class Expression(AST):
-    def __init__(self, conditional=None, true=None, false=None):
+    def __init__(self, conditional=None, true=None, false=None, method=None):
         self.true = true
         self.conditional = conditional
         self.false = false
+        self.method = method
 
 
 class MultiExpression(AST):

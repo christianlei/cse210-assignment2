@@ -11,33 +11,36 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\32")
-        buf.write("N\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\34")
+        buf.write("W\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2")
         buf.write("\3\2\3\2\3\3\3\3\3\3\7\3\25\n\3\f\3\16\3\30\13\3\3\4\3")
         buf.write("\4\3\4\5\4\35\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
         buf.write("\3\5\3\5\3\5\3\5\5\5,\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5")
         buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5=\n\5\f\5\16\5@\13")
         buf.write("\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7")
-        buf.write("\2\3\b\b\2\4\6\b\n\f\2\7\3\2\6\7\3\2\27\30\3\2\17\20\4")
-        buf.write("\2\n\n\16\16\3\2\f\r\2U\2\16\3\2\2\2\4\21\3\2\2\2\6\34")
-        buf.write("\3\2\2\2\b+\3\2\2\2\nA\3\2\2\2\fH\3\2\2\2\16\17\5\4\3")
-        buf.write("\2\17\20\7\2\2\3\20\3\3\2\2\2\21\26\5\6\4\2\22\23\7\5")
-        buf.write("\2\2\23\25\5\6\4\2\24\22\3\2\2\2\25\30\3\2\2\2\26\24\3")
-        buf.write("\2\2\2\26\27\3\2\2\2\27\5\3\2\2\2\30\26\3\2\2\2\31\35")
-        buf.write("\5\b\5\2\32\35\5\n\6\2\33\35\5\f\7\2\34\31\3\2\2\2\34")
-        buf.write("\32\3\2\2\2\34\33\3\2\2\2\35\7\3\2\2\2\36\37\b\5\1\2\37")
-        buf.write(" \7\3\2\2 !\5\b\5\2!\"\7\4\2\2\",\3\2\2\2#$\t\2\2\2$,")
-        buf.write("\5\b\5\r%&\7\13\2\2&,\5\b\5\b\',\7\31\2\2(,\t\3\2\2),")
-        buf.write("\t\4\2\2*,\7\26\2\2+\36\3\2\2\2+#\3\2\2\2+%\3\2\2\2+\'")
-        buf.write("\3\2\2\2+(\3\2\2\2+)\3\2\2\2+*\3\2\2\2,>\3\2\2\2-.\f\f")
-        buf.write("\2\2./\7\b\2\2/=\5\b\5\r\60\61\f\13\2\2\61\62\t\2\2\2")
-        buf.write("\62=\5\b\5\f\63\64\f\n\2\2\64\65\t\5\2\2\65=\5\b\5\13")
-        buf.write("\66\67\f\t\2\2\678\t\6\2\28=\5\b\5\n9:\f\7\2\2:;\7\t\2")
-        buf.write("\2;=\5\b\5\b<-\3\2\2\2<\60\3\2\2\2<\63\3\2\2\2<\66\3\2")
-        buf.write("\2\2<9\3\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\t\3\2\2")
-        buf.write("\2@>\3\2\2\2AB\7\21\2\2BC\5\b\5\2CD\7\22\2\2DE\5\b\5\2")
-        buf.write("EF\7\23\2\2FG\5\b\5\2G\13\3\2\2\2HI\7\24\2\2IJ\5\b\5\2")
-        buf.write("JK\7\25\2\2KL\5\b\5\2L\r\3\2\2\2\7\26\34+<>")
+        buf.write("\3\7\3\7\3\7\3\7\3\7\3\7\5\7U\n\7\3\7\2\3\b\b\2\4\6\b")
+        buf.write("\n\f\2\7\3\2\b\t\3\2\31\32\3\2\21\22\4\2\f\f\20\20\3\2")
+        buf.write("\16\17\2_\2\16\3\2\2\2\4\21\3\2\2\2\6\34\3\2\2\2\b+\3")
+        buf.write("\2\2\2\nA\3\2\2\2\fT\3\2\2\2\16\17\5\4\3\2\17\20\7\2\2")
+        buf.write("\3\20\3\3\2\2\2\21\26\5\6\4\2\22\23\7\7\2\2\23\25\5\6")
+        buf.write("\4\2\24\22\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3")
+        buf.write("\2\2\2\27\5\3\2\2\2\30\26\3\2\2\2\31\35\5\b\5\2\32\35")
+        buf.write("\5\n\6\2\33\35\5\f\7\2\34\31\3\2\2\2\34\32\3\2\2\2\34")
+        buf.write("\33\3\2\2\2\35\7\3\2\2\2\36\37\b\5\1\2\37 \7\3\2\2 !\5")
+        buf.write("\b\5\2!\"\7\4\2\2\",\3\2\2\2#$\t\2\2\2$,\5\b\5\r%&\7\r")
+        buf.write("\2\2&,\5\b\5\b\',\7\33\2\2(,\t\3\2\2),\t\4\2\2*,\7\30")
+        buf.write("\2\2+\36\3\2\2\2+#\3\2\2\2+%\3\2\2\2+\'\3\2\2\2+(\3\2")
+        buf.write("\2\2+)\3\2\2\2+*\3\2\2\2,>\3\2\2\2-.\f\f\2\2./\7\n\2\2")
+        buf.write("/=\5\b\5\r\60\61\f\13\2\2\61\62\t\2\2\2\62=\5\b\5\f\63")
+        buf.write("\64\f\n\2\2\64\65\t\5\2\2\65=\5\b\5\13\66\67\f\t\2\2\67")
+        buf.write("8\t\6\2\28=\5\b\5\n9:\f\7\2\2:;\7\13\2\2;=\5\b\5\b<-\3")
+        buf.write("\2\2\2<\60\3\2\2\2<\63\3\2\2\2<\66\3\2\2\2<9\3\2\2\2=")
+        buf.write("@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\t\3\2\2\2@>\3\2\2\2AB\7")
+        buf.write("\23\2\2BC\5\b\5\2CD\7\24\2\2DE\5\b\5\2EF\7\25\2\2FG\5")
+        buf.write("\b\5\2G\13\3\2\2\2HI\7\26\2\2IJ\5\b\5\2JK\7\27\2\2KL\5")
+        buf.write("\6\4\2LU\3\2\2\2MN\7\26\2\2NO\5\b\5\2OP\7\27\2\2PQ\7\5")
+        buf.write("\2\2QR\5\6\4\2RS\7\6\2\2SU\3\2\2\2TH\3\2\2\2TM\3\2\2\2")
+        buf.write("U\r\3\2\2\2\b\26\34+<>T")
         return buf.getvalue()
 
 
@@ -51,16 +54,16 @@ class WhileParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'('", "')'", "';'", "'+'", "'-'", "'*'", 
-                     "':='", "'='", "'\u00AC'", "'\u2227'", "'\u2228'", 
-                     "'<'", "'true'", "'false'", "'if'", "'then'", "'else'", 
-                     "'while'", "'do'", "'skip'" ]
+    literalNames = [ "<INVALID>", "'('", "')'", "'{'", "'}'", "';'", "'+'", 
+                     "'-'", "'*'", "':='", "'='", "'\u00AC'", "'\u2227'", 
+                     "'\u2228'", "'<'", "'true'", "'false'", "'if'", "'then'", 
+                     "'else'", "'while'", "'do'", "'skip'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "SEMI", "OP_ADD", 
-                      "OP_SUB", "OP_MUL", "OP_ASGN", "OP_EQ", "OP_NOT", 
-                      "OP_AND", "OP_OR", "OP_LESS", "TRUE", "FALSE", "IF", 
-                      "THEN", "ELSE", "WHILE", "DO", "PASS", "VAR", "WORD_VAR", 
-                      "NUMBER", "WS" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "SEMI", "OP_ADD", "OP_SUB", "OP_MUL", 
+                      "OP_ASGN", "OP_EQ", "OP_NOT", "OP_AND", "OP_OR", "OP_LESS", 
+                      "TRUE", "FALSE", "IF", "THEN", "ELSE", "WHILE", "DO", 
+                      "PASS", "VAR", "WORD_VAR", "NUMBER", "WS" ]
 
     RULE_compileUnit = 0
     RULE_semi_stat = 1
@@ -75,28 +78,30 @@ class WhileParser ( Parser ):
     EOF = Token.EOF
     T__0=1
     T__1=2
-    SEMI=3
-    OP_ADD=4
-    OP_SUB=5
-    OP_MUL=6
-    OP_ASGN=7
-    OP_EQ=8
-    OP_NOT=9
-    OP_AND=10
-    OP_OR=11
-    OP_LESS=12
-    TRUE=13
-    FALSE=14
-    IF=15
-    THEN=16
-    ELSE=17
-    WHILE=18
-    DO=19
-    PASS=20
-    VAR=21
-    WORD_VAR=22
-    NUMBER=23
-    WS=24
+    T__2=3
+    T__3=4
+    SEMI=5
+    OP_ADD=6
+    OP_SUB=7
+    OP_MUL=8
+    OP_ASGN=9
+    OP_EQ=10
+    OP_NOT=11
+    OP_AND=12
+    OP_OR=13
+    OP_LESS=14
+    TRUE=15
+    FALSE=16
+    IF=17
+    THEN=18
+    ELSE=19
+    WHILE=20
+    DO=21
+    PASS=22
+    VAR=23
+    WORD_VAR=24
+    NUMBER=25
+    WS=26
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -841,7 +846,7 @@ class WhileParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
             self.conditional = None # ExprContext
-            self.inner = None # ExprContext
+            self.inner = None # StatContext
 
         def WHILE(self):
             return self.getToken(WhileParser.WHILE, 0)
@@ -849,11 +854,12 @@ class WhileParser ( Parser ):
         def DO(self):
             return self.getToken(WhileParser.DO, 0)
 
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(WhileParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(WhileParser.ExprContext,i)
+        def expr(self):
+            return self.getTypedRuleContext(WhileParser.ExprContext,0)
+
+
+        def stat(self):
+            return self.getTypedRuleContext(WhileParser.StatContext,0)
 
 
         def getRuleIndex(self):
@@ -881,15 +887,38 @@ class WhileParser ( Parser ):
         localctx = WhileParser.While_statContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_while_stat)
         try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 70
-            self.match(WhileParser.WHILE)
-            self.state = 71
-            localctx.conditional = self.expr(0)
-            self.state = 72
-            self.match(WhileParser.DO)
-            self.state = 73
-            localctx.inner = self.expr(0)
+            self.state = 82
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 70
+                self.match(WhileParser.WHILE)
+                self.state = 71
+                localctx.conditional = self.expr(0)
+                self.state = 72
+                self.match(WhileParser.DO)
+                self.state = 73
+                localctx.inner = self.stat()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 75
+                self.match(WhileParser.WHILE)
+                self.state = 76
+                localctx.conditional = self.expr(0)
+                self.state = 77
+                self.match(WhileParser.DO)
+                self.state = 78
+                self.match(WhileParser.T__2)
+                self.state = 79
+                localctx.inner = self.stat()
+                self.state = 80
+                self.match(WhileParser.T__3)
+                pass
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

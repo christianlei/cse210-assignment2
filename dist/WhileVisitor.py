@@ -82,6 +82,7 @@ class WhileVisitor(ParseTreeVisitor):
         node.conditional = self.visit(ctx.conditional)
         node.true = self.visit(ctx.true)
         node.false = self.visit(ctx.false)
+        node.method = 'if'
         return node
 
     # Visit a parse tree produced by WhileParser#while_stat.
@@ -89,6 +90,7 @@ class WhileVisitor(ParseTreeVisitor):
         node = Expression()
         node.conditional = self.visit(ctx.conditional)
         node.true = self.visit(ctx.inner)
+        node.method = 'while'
         return node
 
     # Visit a parse tree produced by WhileParser#semi_stat.
