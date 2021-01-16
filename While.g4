@@ -22,6 +22,7 @@ expr
     | left=expr op='*' right=expr #INFIX
     | left=expr op=('+'|'-') right=expr #INFIX
     | left=expr op=('=' | '<') right=expr #INFIX
+    | left=expr op=('∧' | '∨') right=expr #INFIX
     | left=expr op=':=' right=expr #INFIX
     | value=NUMBER #INT
     | value=VAR #VAL
@@ -49,8 +50,8 @@ OP_ASGN: ':=';
 
 OP_EQ: '=';
 OP_NOT: '¬';
-OP_AND: '^';
-OP_OR: 'v';
+OP_AND: '∧';
+OP_OR: '∨';
 OP_LESS: '<';
 
 TRUE: 'true';

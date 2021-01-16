@@ -9,8 +9,9 @@ class Interpreter:
         self.empty_var = 0
 
     def check_in_dict(self, var):
-        if var not in self.d:
-            self.d[var] = self.empty_var
+        if var in self.d:
+            return self.d[var]
+        return self.empty_var
 
     def eval(self, item):
         if isinstance(item, MultiExpression):
@@ -36,9 +37,13 @@ class Interpreter:
                 return self.eval(item.left) * self.eval(item.right)
             if item.op == '-':
                 return self.eval(item.left) - self.eval(item.right)
+            if item.op == '∧':
+                return self.eval(item.left) and self.eval(item.right)
+            if item.op == '∨':
+                return self.eval(item.left) or self.eval(item.right)
+
             left_item = self.eval(item.left)
             right_item = self.eval(item.right)
-
             if isinstance(left_item, int) and isinstance(right_item, int):
                 if item.op == '=':
                     return left_item == right_item
@@ -48,25 +53,20 @@ class Interpreter:
                 self.check_in_dict(left_item)
                 self.check_in_dict(right_item)
                 if item.op == '=':
-                    return self.d[left_item] == self.d[right_item]
+                    return self.check_in_dict(left_item) == self.check_in_dict(right_item)
                 if item.op == '<':
-                    return self.d[left_item] < self.d[right_item]
+                    return self.check_in_dict(left_item) < self.check_in_dict(right_item)
             if isinstance(right_item, str) and isinstance(left_item, int):
                 self.check_in_dict(right_item)
                 if item.op == '=':
-                    return left_item == self.d[right_item]
+                    return left_item == self.check_in_dict(right_item)
                 if item.op == '<':
-                    return left_item < self.d[right_item]
+                    return left_item < self.check_in_dict(right_item)
             if isinstance(right_item, int) and isinstance(left_item, str):
-                self.check_in_dict(left_item)
                 if item.op == '=':
-                    return right_item == self.d[left_item]
+                    return right_item == self.check_in_dict(left_item)
                 if item.op == '<':
-                    return right_item < self.d[left_item]
-            # if item.op == '^':
-            #     return self.eval(item.left) and self.eval(item.right)
-            # if item.op == 'v':
-            #     return self.eval(item.left) or self.eval(item.right)
+                    return  self.check_in_dict(left_item) < right_item
             # if item.op == '¬':
             #     return not self.eval(item.right)
 

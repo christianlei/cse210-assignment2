@@ -31,6 +31,10 @@ class WhileVisitor(ParseTreeVisitor):
             node.op = '='
         elif ctx.OP_LESS():
             node.op = '<'
+        elif ctx.OP_AND():
+            node.op = '∧'
+        elif ctx.OP_OR():
+            node.op = '∨'
         node.left = self.visit(ctx.left)
         node.right = self.visit(ctx.right)
         return node
