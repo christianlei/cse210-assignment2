@@ -14,3 +14,8 @@ class NegInt(AST):
 class Var(AST):
     def __init__(self, value):
         self.value = value
+
+
+class Bool(AST):
+    def __init__(self, value):
+        self.value = value

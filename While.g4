@@ -3,7 +3,12 @@
 grammar While;
 
 compileUnit
-    :   expr EOF
+    :   stat EOF
+    ;
+
+stat
+    : expr
+    | if_stat
     ;
 
 expr
@@ -19,7 +24,7 @@ expr
     ;
 
 if_stat
-    : IF TRUE THEN expr ELSE expr
+    : IF conditional=expr THEN true=expr ELSE false=expr
     ;
 
 

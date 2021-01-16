@@ -1,6 +1,6 @@
 from antlr4 import *
 from entities.binaryop import BinaryOp
-from entities.item import Int, NegInt, Var
+from entities.item import Int, NegInt, Var, Bool
 
 if __name__ is not None and "." in __name__:
     from .WhileParser import WhileParser
@@ -14,7 +14,7 @@ class WhileVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by WhileParser#compileUnit.
     def visitCompileUnit(self, ctx: WhileParser.CompileUnitContext):
-        return self.visit(ctx.expr())
+        return self.visit(ctx.stat())
 
     # Visit a parse tree produced by WhileParser#INFIX.
     def visitINFIX(self, ctx: WhileParser.INFIXContext):
@@ -43,6 +43,13 @@ class WhileVisitor(ParseTreeVisitor):
     def visitVAL(self, ctx: WhileParser.VALContext):
         return Var(value=(str(ctx.VAR())))
 
+    # Visit a parse tree produced by WhileParser#BOOL.
+    def visitBOOL(self, ctx: WhileParser.BOOLContext):
+        if ctx.TRUE():
+            return Bool(value=(bool(ctx.TRUE())))
+        elif ctx.FALSE():
+            return Bool(value=(bool(ctx.FALSE())))
+
     # Visit a parse tree produced by WhileParser#UNARY.
     def visitUNARY(self, ctx: WhileParser.UNARYContext):
         if ctx.OP_ADD():
@@ -52,7 +59,18 @@ class WhileVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
     # Visit a parse tree produced by WhileParser#PASS.
-    def visitPASS(self, ctx:WhileParser.PASSContext):
+    def visitPASS(self, ctx: WhileParser.PASSContext):
+        return
+
+    # Visit a parse tree produced by WhileParser#stat.
+    def visitStat(self, ctx: WhileParser.StatContext):
         return self.visitChildren(ctx)
+
+    # Visit a parse tree produced by WhileParser#if_stat.
+    def visitIf_stat(self, ctx: WhileParser.If_statContext):
+        if self.visit(ctx.conditional):
+            return self.visit(ctx.true)
+        else:
+            return self.visit(ctx.false)
 
 del WhileParser

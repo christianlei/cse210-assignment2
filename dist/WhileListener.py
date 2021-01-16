@@ -17,6 +17,15 @@ class WhileListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by WhileParser#stat.
+    def enterStat(self, ctx:WhileParser.StatContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#stat.
+    def exitStat(self, ctx:WhileParser.StatContext):
+        pass
+
+
     # Enter a parse tree produced by WhileParser#VAL.
     def enterVAL(self, ctx:WhileParser.VALContext):
         pass
@@ -32,6 +41,15 @@ class WhileListener(ParseTreeListener):
 
     # Exit a parse tree produced by WhileParser#PASS.
     def exitPASS(self, ctx:WhileParser.PASSContext):
+        pass
+
+
+    # Enter a parse tree produced by WhileParser#BOOL.
+    def enterBOOL(self, ctx:WhileParser.BOOLContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#BOOL.
+    def exitBOOL(self, ctx:WhileParser.BOOLContext):
         pass
 
 
@@ -68,6 +86,15 @@ class WhileListener(ParseTreeListener):
 
     # Exit a parse tree produced by WhileParser#INT.
     def exitINT(self, ctx:WhileParser.INTContext):
+        pass
+
+
+    # Enter a parse tree produced by WhileParser#if_stat.
+    def enterIf_stat(self, ctx:WhileParser.If_statContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#if_stat.
+    def exitIf_stat(self, ctx:WhileParser.If_statContext):
         pass
 
 
