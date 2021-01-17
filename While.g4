@@ -65,8 +65,7 @@ WHILE: 'while';
 DO: 'do';
 PASS: 'skip';
 
-VAR : 'a'..'z';
-WORD_NUM_VAR: 'a'..'z'([0-9]);
+VAR : 'a'..'z'([0-9])*;
 WORD_VAR: 'A'..'Z'+;
 LOWER_WORD_VAR: 'a'..'z'+;
 NUMBER : [0-9]+ ('.' [0-9]+)? ([eE] [+-]? [0-9]+)?;
