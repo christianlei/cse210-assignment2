@@ -1,0 +1,134 @@
+commit 4e62e39a0093d86b2cd476272f0a281636005bea (HEAD -> master)
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sun Jan 17 12:29:01 2021 -0800
+
+    added ternary operator
+
+commit ea31a47d833d7ffd9d102254005451ad5297226b
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 22:40:44 2021 -0800
+
+    finished the tests
+
+Date:   Fri Jan 15 23:04:00 2021 -0800
+
+    git if statements to work
+commit 86cf3fa2b79cec1bb119d0ae86d315abc5c15d56
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 22:30:44 2021 -0800
+
+    all medium tests work
+
+commit d9e08e55c55609840198873fd99d2fe5209371a1
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 16:07:10 2021 -0800
+
+    still figuring out the l0 situation
+
+commit 981170f3f5ada5036eb25c611617e66a51b0a7cf
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 14:59:11 2021 -0800
+
+    a few medium tests for the while loop
+
+commit df498076648e900d199814e1a2045e2245af4bee
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 12:18:15 2021 -0800
+
+    finish easy test cases
+
+commit b32c1e15d368866ffb2e29923c982887777d0a0f
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 12:10:46 2021 -0800
+
+    not operator works
+
+commit 2e0a1b4185ac81203f51888a5067530d56775a9f
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 11:53:00 2021 -0800
+
+    and and or work
+
+commit 692a8b460a1ab60f4de14f269b35fac5c2d7f307
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 11:21:59 2021 -0800
+
+    completes less than and semi
+
+commit 1c1586c3bcc19d4f98291479a8a69f11fb69ecbc
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Sat Jan 16 10:00:47 2021 -0800
+
+    While Loops
+
+commit 2f74a5a3e60bb6dda5dba66e8f094c243c3b1ed5
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 23:57:30 2021 -0800
+
+    while works
+
+commit 75cb04988df52f15fe6e7d9ec095bee9de6e21f7
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 23:04:00 2021 -0800
+
+    git if statements to work
+
+commit b5601f5355d8079723bfc23d6829f847dbf4dcce
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 22:17:30 2021 -0800
+
+    adds skip
+
+commit 81f1c40300de58868739710175bbcd62a1f2666b
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 20:05:05 2021 -0800
+
+    asg1 tests pass
+
+commit f9b56d616848cfe3f732e339131a66795f4c2ca9
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 15:57:27 2021 -0800
+
+    non negatives work
+
+commit 5fb568dfd6708dc0509fc1625d5c701eaaea38e7
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Fri Jan 15 13:24:56 2021 -0800
+
+    reorg files
+
+commit 962366ad891978954f5a1d64a00b89cc0cf51308
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Thu Jan 14 22:57:47 2021 -0800
+
+    cleaning up
+
+commit 81de97d5bd6068912e88fab6d25bf6a8f4e209f2
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Thu Jan 14 21:58:28 2021 -0800
+
+    compiled first while visitor
+
+commit 38b9455bb738ac4c2020692e4b9c8f6c73d7a130
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Thu Jan 14 21:19:15 2021 -0800
+
+    using antlr for parsing
+
+commit e6361bb1eede715c2f1b6011b77fc322251b5a60
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Wed Jan 13 22:07:51 2021 -0800
+
+    test case 1 passes
+
+commit d6700bc376487b79dafe781107294ab2a4c939ce
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Wed Jan 13 21:05:05 2021 -0800
+
+    adds git ignore
+
+commit b436ea077ec858facc1053a949d11f1a5a10b58f
+Author: Christian Lei <christian.lei@flysfo.com>
+Date:   Wed Jan 13 21:03:09 2021 -0800
+
+    Boilerplate template and orginizing files from assignment 1, worked on first parse
