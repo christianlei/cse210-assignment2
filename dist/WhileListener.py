@@ -116,12 +116,21 @@ class WhileListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by WhileParser#while_stat.
-    def enterWhile_stat(self, ctx:WhileParser.While_statContext):
+    # Enter a parse tree produced by WhileParser#PARENWHILEBLOCK.
+    def enterPARENWHILEBLOCK(self, ctx:WhileParser.PARENWHILEBLOCKContext):
         pass
 
-    # Exit a parse tree produced by WhileParser#while_stat.
-    def exitWhile_stat(self, ctx:WhileParser.While_statContext):
+    # Exit a parse tree produced by WhileParser#PARENWHILEBLOCK.
+    def exitPARENWHILEBLOCK(self, ctx:WhileParser.PARENWHILEBLOCKContext):
+        pass
+
+
+    # Enter a parse tree produced by WhileParser#NOPAREN.
+    def enterNOPAREN(self, ctx:WhileParser.NOPARENContext):
+        pass
+
+    # Exit a parse tree produced by WhileParser#NOPAREN.
+    def exitNOPAREN(self, ctx:WhileParser.NOPARENContext):
         pass
 
 

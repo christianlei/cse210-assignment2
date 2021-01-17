@@ -53,6 +53,10 @@ class WhileVisitor(ParseTreeVisitor):
             return Var(value=(str(ctx.VAR())))
         elif ctx.WORD_VAR():
             return Var(value=(str(ctx.WORD_VAR())))
+        elif ctx.LOWER_WORD_VAR():
+            return Var(value=(str(ctx.LOWER_WORD_VAR())))
+        elif ctx.WORD_NUM_VAR():
+            return Var(value=(str(ctx.WORD_NUM_VAR())))
 
     # Visit a parse tree produced by WhileParser#BOOL.
     def visitBOOL(self, ctx: WhileParser.BOOLContext):
@@ -85,14 +89,6 @@ class WhileVisitor(ParseTreeVisitor):
         node.method = 'if'
         return node
 
-    # Visit a parse tree produced by WhileParser#while_stat.
-    def visitWhile_stat(self, ctx: WhileParser.While_statContext):
-        node = Expression()
-        node.conditional = self.visit(ctx.conditional)
-        node.true = self.visit(ctx.inner)
-        node.method = 'while'
-        return node
-
     # Visit a parse tree produced by WhileParser#semi_stat.
     def visitSemi_stat(self, ctx: WhileParser.Semi_statContext):
         root_node = MultiExpression()
@@ -110,6 +106,22 @@ class WhileVisitor(ParseTreeVisitor):
     def visitUNARYBOOL(self, ctx: WhileParser.UNARYBOOLContext):
         if ctx.OP_NOT():
             return NotOp(node=self.visit(ctx.expr()))
+
+    # Visit a parse tree produced by WhileParser#PARENWHILEBLOCK.
+    def visitPARENWHILEBLOCK(self, ctx: WhileParser.PARENWHILEBLOCKContext):
+        node = Expression()
+        node.conditional = self.visit(ctx.conditional)
+        node.true = self.visit(ctx.inner)
+        node.method = 'while'
+        return node
+
+    # Visit a parse tree produced by WhileParser#NOPAREN.
+    def visitNOPAREN(self, ctx: WhileParser.NOPARENContext):
+        node = Expression()
+        node.conditional = self.visit(ctx.conditional)
+        node.true = self.visit(ctx.inner_no_brace)
+        node.method = 'while'
+        return node
 
 
 del WhileParser

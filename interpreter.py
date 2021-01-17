@@ -47,14 +47,6 @@ class Interpreter:
         if isinstance(item, BinaryOp):
             if item.op == ':=':
                 self.d[self.eval(item.left)] = self.eval(item.right)
-            if item.op == '+':
-                return self.eval(item.left) + self.eval(item.right)
-            if item.op == '*':
-                return self.eval(item.left) * self.eval(item.right)
-            if item.op == '∧':
-                return self.eval(item.left) and self.eval(item.right)
-            if item.op == '∨':
-                return self.eval(item.left) or self.eval(item.right)
 
             left_item = self.eval(item.left)
             right_item = self.eval(item.right)
@@ -64,6 +56,14 @@ class Interpreter:
                 return self.return_int_value(left_item) < self.return_int_value(right_item)
             if item.op == '-':
                 return self.return_int_value(left_item) - self.return_int_value(right_item)
+            if item.op == '*':
+                return self.return_int_value(left_item) * self.return_int_value(right_item)
+            if item.op == '+':
+                return self.return_int_value(left_item) + self.return_int_value(right_item)
+            if item.op == '∧':
+                return self.return_int_value(left_item) and self.return_int_value(right_item)
+            if item.op == '∨':
+                return self.return_int_value(left_item) or self.return_int_value(right_item)
 
         if isinstance(item, Int) or isinstance(item, NegInt):
             return item.value
@@ -78,6 +78,7 @@ class Interpreter:
         return_list = []
         for key, value in self.d.items():
             return_list.append(string_format.format(key, value))
+        return_list = sorted(return_list)
         return_string = ", ".join(return_list)
         final_result = '{' + return_string + '}'
         print(final_result)
