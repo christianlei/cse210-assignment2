@@ -33,6 +33,7 @@ expr
 
 if_stat
     : IF conditional=expr THEN true=stat ELSE false=stat
+    | conditional=expr TERNARY_IF true=stat TERNARY_ELSE false=stat
     ;
 
 while_stat
@@ -55,6 +56,8 @@ OP_NOT: '¬';
 OP_AND: '∧';
 OP_OR: '∨';
 OP_LESS: '<';
+TERNARY_IF: '?';
+TERNARY_ELSE: ':';
 
 TRUE: 'true';
 FALSE: 'false';
