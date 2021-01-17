@@ -46,7 +46,7 @@ class Interpreter:
 
         if isinstance(item, BinaryOp):
             if item.op == ':=':
-                self.d[self.eval(item.left)] = self.eval(item.right)
+                self.d[self.eval(item.left)] = self.return_int_value(self.eval(item.right))
 
             left_item = self.eval(item.left)
             right_item = self.eval(item.right)

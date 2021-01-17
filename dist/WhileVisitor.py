@@ -51,12 +51,6 @@ class WhileVisitor(ParseTreeVisitor):
     def visitVAL(self, ctx: WhileParser.VALContext):
         if ctx.VAR():
             return Var(value=(str(ctx.VAR())))
-        elif ctx.WORD_VAR():
-            return Var(value=(str(ctx.WORD_VAR())))
-        elif ctx.LOWER_WORD_VAR():
-            return Var(value=(str(ctx.LOWER_WORD_VAR())))
-        elif ctx.WORD_NUM_VAR():
-            return Var(value=(str(ctx.WORD_NUM_VAR())))
 
     # Visit a parse tree produced by WhileParser#BOOL.
     def visitBOOL(self, ctx: WhileParser.BOOLContext):
